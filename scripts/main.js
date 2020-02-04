@@ -2,14 +2,42 @@ window.addEventListener('DOMContentLoaded', () => {
 
   window.onload = function (){
     console.log('It is working!')
-    document.getElementById('button-arraySplit').addEventListener('click', arraySplit)
+    document.getElementById('button-splitString').addEventListener('click', arraySplit)
+    document.getElementById('button-splitReset').addEventListener('click', arraySplitReset)
   }
+
 
   const arraySplit = function(e) {
     e.preventDefault()
     e.stopPropagation()
+    var splitX = $('#splitX').val()
+    var splitSource = $('#splitSource').val().split(splitX)
+    $('#splitResult').text('['+splitSource+']')
+    $('#splitLength').text(splitSource.length)
   }
 
+  const arraySplitReset = function() {
+    $('#splitResult').text('')
+    $('#splitLength').text('')
+  }
+
+
+  //
+  // const arraySplit = function(e) {
+  //   e.preventDefault()
+  //   e.stopPropagation()
+  //   var splitSource = $('#splitSource').val()
+  //   console.log('yes?')
+  //   console.log(splitSource)
+  //   const splitResult = document.getElementById('splitResult')
+  //   var temp = splitSource.innerText
+  //   console.log(temp)
+  //   var temp1 = temp.split(' ')
+  //   console.log(temp1)
+  //   splitResult.textContent=value2
+  //   alert('hello')
+  // }
+  //
 
 
   console.log('String Split')

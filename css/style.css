@@ -1,5 +1,5 @@
 :root {
-  --layout-border: 1px;
+  --layout-border: 0px;
 }
 
 * {
@@ -61,6 +61,7 @@ form {
 }
 
 .form-row input {
+    font-size: 12pt;
   outline: none;
   flex: 1;
   height: 20px;

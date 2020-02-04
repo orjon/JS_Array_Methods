@@ -12,20 +12,31 @@
       <h1>JS Array Methods</h1>
     </header>
     <main>
-      <form class='width25'>
-        <h3>Split string into array</h3>
+      <form class='width50'>
+        <h3>Split string on 'x' into array: <i>string.split('x')</i></h3>
         <div class='form-row'>
-          <label for='fieldA'>String</label>
-          <input type='text' id='fieldA'></input>
+          <label for='splitSource'>string</label>
+          <input type='text' id='splitSource'></input>
         </div>
 
         <div class='form-row'>
-          <p>Result:</p>
-          <div>split</div>
+          <label for='splitX'>split('x')</label>
+          <input type='text' id='splitX'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Resultant array:&nbsp</p>
+          <div id='splitResult'></div>
+        </div>
+
+        <div class='form-row'>
+          <p>Array length:&nbsp</p>
+          <div id='splitLength'></div>
         </div>
 
         <div class='form-row right'>
-            <button class='submit' id='button-arraySplit'>Split</button>
+            <button class='reset' type='reset' id='button-splitReset'>Reset</button>
+            <button class='submit' id='button-splitString'>Split</button>
         </div>
       </form>
 
