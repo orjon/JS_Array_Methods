@@ -61,7 +61,7 @@ form {
 }
 
 .form-row input {
-    font-size: 12pt;
+  font-size: 12pt;
   outline: none;
   flex: 1;
   height: 20px;
