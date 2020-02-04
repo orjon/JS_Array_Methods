@@ -43,6 +43,7 @@
 
       <form id='form-subString' class='width50'>
         <h3>Get substring from string: <i>string.substr(index,length)</i></h3>
+        <h3>Length=0: <i>string.substr(index)</i></h3>
         <div class='form-row'>
           <label for='subStringSource'>string</label>
           <input type='text' id='subStringSource'></input>
@@ -52,6 +53,7 @@
           <label for='subStringIndex'>index</label>
           <input type='text' id='subStringIndex'></input>
         </div>
+
 
         <div class='form-row'>
           <label for='subStringLength'>length</label>
@@ -66,6 +68,45 @@
         <div class='form-row right'>
             <button class='reset' type='reset' id='button-subStringReset'>Reset</button>
             <button class='submit' id='button-subString'>Get Substring</button>
+        </div>
+      </form>
+
+
+      <form id='form-cap' class='width50'>
+        <h3>Capitalize word: <i>string.charAt(0).toUpperCase() + string.substr(1)</i></h3>
+
+        <div class='form-row'>
+          <label for='capSource'>string</label>
+          <input type='text' id='capSource'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Resultant string:&nbsp</p>
+          <div id='capResult'></div>
+        </div>
+
+        <div class='form-row right'>
+            <button class='reset' type='reset' id='button-capReset'>Reset</button>
+            <button class='submit' id='button-cap'>Capitalize</button>
+        </div>
+      </form>
+
+
+      <form id='form-caps' class='width50'>
+        <h3>Convert to title case</h3>
+        <div class='form-row'>
+          <label for='capsSource'>string</label>
+          <input type='text' id='capsSource'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Resultant string:&nbsp</p>
+          <div id='capsResult'></div>
+        </div>
+
+        <div class='form-row right'>
+            <button class='reset' type='reset' id='button-capsReset'>Reset</button>
+            <button class='submit' id='button-caps'>Title Case</button>
         </div>
       </form>
 

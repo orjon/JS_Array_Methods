@@ -6,6 +6,10 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('button-splitReset').addEventListener('click', stringSplitReset)
     document.getElementById('button-subString').addEventListener('click', subString)
     document.getElementById('button-subStringReset').addEventListener('click', subStringReset)
+    document.getElementById('button-cap').addEventListener('click', cap)
+    document.getElementById('button-capReset').addEventListener('click', capReset)
+    document.getElementById('button-caps').addEventListener('click', caps)
+    document.getElementById('button-capsReset').addEventListener('click', capsReset)
   }
 
 
@@ -26,14 +30,17 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const subString = function(e) {
-
     e.preventDefault()
     e.stopPropagation()
     var subStringIndex = $('#subStringIndex').val()
     var subStringLength = $('#subStringLength').val()
     var subStringSource = $('#subStringSource').val()
-    alert(subStringSource+ ' '+subStringIndex +' '+subStringLength)
-    var subStringResult = subStringSource.substr(subStringIndex,subStringLength)
+    var subStringResult = undefined
+    if (subStringLength === '0') {
+      subStringResult = subStringSource.substr(subStringIndex)
+    } else {
+      subStringResult = subStringSource.substr(subStringIndex,subStringLength)
+    }
     $('#subStringResult').text(subStringResult)
   }
 
@@ -41,6 +48,37 @@ window.addEventListener('DOMContentLoaded', () => {
     e.preventDefault()
     $('#form-subString').trigger('reset')
     $('#subStringResult').text('')
+  }
+
+  const cap = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var capSource = $('#capSource').val()
+    var capResult = capSource.charAt(0).toUpperCase() + capSource.substr(1)
+    $('#capResult').text(capResult)
+  }
+
+  const capReset = function(e) {
+    e.preventDefault()
+    $('#form-cap').trigger('reset')
+    $('#capResult').text('')
+  }
+
+  const caps = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+
+    var capsSource = $('#capsSource').val().split(' ')
+    const capitalize = item => item.charAt(0).toUpperCase() + item.substr(1)
+    const temp = capsSource.map(capitalize)
+    const capsResult = temp.join(' ')
+    $('#capsResult').text(capsResult)
+  }
+
+  const capsReset = function(e) {
+    e.preventDefault()
+    $('#form-caps').trigger('reset')
+    $('#capsResult').text('')
   }
 
 })
