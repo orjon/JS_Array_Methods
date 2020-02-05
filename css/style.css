@@ -129,7 +129,6 @@ select {
   flex: 1;
   outline: none;
   background-color: #eeeeee;
-  /* width: 268px; */
   font-size: 16px;
   border: 0;
   border-radius: 0;
@@ -147,17 +146,3 @@ select {
 .right {
 	text-align: right;
 }
-
-/* .width25 {
-  width: 25%;
-  min-width: 350px;
-}
-.width50 {
-  width: 100%;
-}
-.width75 {
-  width: 75%;
-}
-.width100 {
-  width: 100%;
-} */

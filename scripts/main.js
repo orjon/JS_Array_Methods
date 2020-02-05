@@ -14,9 +14,47 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('button-caps').addEventListener('click', caps)
     document.getElementById('button-capsReset').addEventListener('click', capsReset)
 
-    document.getElementById('button-join').addEventListener('click', join)
-    document.getElementById('button-joinReset').addEventListener('click', joinReset)
+    document.getElementById('button-joinA').addEventListener('click', joinA)
+    document.getElementById('button-joinAReset').addEventListener('click', joinAReset)
+
+    document.getElementById('button-joinB').addEventListener('click', joinB)
+    document.getElementById('button-joinBReset').addEventListener('click', joinBReset)
+
+    document.getElementById('button-toString').addEventListener('click', toString)
+    document.getElementById('button-toStringReset').addEventListener('click', toStringReset)
+
+    document.getElementById('button-slice').addEventListener('click', slice)
+    document.getElementById('button-sliceReset').addEventListener('click', sliceReset)
   }
+
+
+
+    const slice = function(e) {
+      e.preventDefault()
+      e.stopPropagation()
+      var sliceString = $('#array').val()
+      var sliceArray = sliceString.split(',')
+      var indexA = $('#sliceIndexA').val()
+      var indexB = $('#sliceIndexB').val()
+      var sliceResult = sliceArray.slice(indexA,indexB)
+      $('#sliceResult').text('['+sliceResult+']')
+      $('#sliceLength').text(sliceResult.length)
+    }
+
+    const sliceReset = function(e) {
+      e.preventDefault()
+      $('#form-slice').trigger('reset')
+      $('#sliceResult').text('')
+      $('#sliceLength').text('')
+    }
+
+    <!--
+          // 6. Make a new array of the 2nd and 3rd elements of an array using `Array.slice`
+          // 	- `['hippo', 'giraffe', 'lion', 'hyena'] => ['giraffe', 'lion']`
+          // const value16 = ['hippo', 'giraffe', 'lion', 'hyena']
+          // const value17 = value16.slice(1,3) //splice would remove these from the original
+          // console.log(value17)
+          // -->
 
 
   const stringSplit = function(e) {
@@ -84,32 +122,60 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
 
-
-  // // 4. Join two arrays of strings using `Array.concat`.
-  // // 	- `['Mike', 'Emily'] ['Will', 'Ajay'] => ['Mike', 'Emily', 'Will', 'Ajay']`
-  // console.log('--------------')
-  // const value11 = ['Mike', 'Emily']
-  // const value12 = ['Will', 'Ajay']
-  // let value13 = value11.concat(value12)
-  // console.log(value13)
-
-  const join = function(e) {
+  const joinA = function(e) {
     e.preventDefault()
     e.stopPropagation()
     var stringA = $('#arrayA').val()
     var arrayA = stringA.split(',')
     var stringB = $('#arrayB').val()
     var arrayB = stringB.split(',')
-    var joinResult = arrayA.concat(arrayB)
-    $('#joinResult').text(joinResult)
-    $('#joinLength').text(joinResult.length)
+    var joinResultA = arrayA.concat(arrayB)
+    $('#joinResultA').text('['+joinResultA+']')
+    $('#joinLengthA').text(joinResultA.length)
   }
 
-  const joinReset = function(e) {
+  const joinAReset = function(e) {
     e.preventDefault()
-    $('#form-join').trigger('reset')
-    $('#joinResult').text('')
+    $('#form-joinA').trigger('reset')
+    $('#joinResultA').text('')
+    $('#joinLengthA').text('')
   }
+
+  const joinB = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var stringC = $('#arrayC').val()
+    var arrayC = stringC.split(',')
+    var stringD = $('#arrayD').val()
+    var arrayD = stringD.split(',')
+    var joinResultB = [...arrayC, ...arrayD]
+    $('#joinResultB').text('['+joinResultB+']')
+    $('#joinLengthB').text(joinResultB.length)
+  }
+
+  const joinBReset = function(e) {
+    e.preventDefault()
+    $('#form-joinB').trigger('reset')
+    $('#joinResultB').text('')
+    $('#joinLengthB').text('')
+  }
+
+  const toString = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var array = $('#array').val().split(',')
+    var separator= $('#separator').val()
+    var toStringResult = array.join(separator)
+    $('#toStringResult').text(toStringResult)
+  }
+
+  const toStringReset = function(e) {
+    e.preventDefault()
+    $('#form-toString').trigger('reset')
+    $('#toStringResult').text('')
+
+  }
+
 
 
 

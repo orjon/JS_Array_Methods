@@ -12,6 +12,40 @@
       <h1>JS Array Methods</h1>
     </header>
     <main>
+
+      <form id='form-slice' class='width50'>
+        <h3>Slice array from indexA to indexB</h3>
+        <h4>array.slice(indexA,indexB)</h4>
+        <div class='form-row'>
+          <label for='array'>array</label>
+          <input type='text' placeholder='value1,value2,value3...' id='array'></input>
+        </div>
+
+        <div class='form-row'>
+          <label for='sliceIndexA'>indexA</label>
+          <input type='text' id='sliceIndexA'></input>
+        </div>
+
+        <div class='form-row'>
+          <label for='sliceIndexB'>indexB</label>
+          <input type='text' id='sliceIndexB'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Resultant array:&nbsp</p>
+          <div id='sliceResult'></div>
+        </div>
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-sliceReset'>Reset</button>
+            <button class='submit' id='button-slice'>Slice</button>
+        </div>
+      </form>
+
+
+
+
+
       <form id='form-splitString' class='width50'>
         <h3>Split string on 'x' into array</h3>
         <h4>string.split('x')</h4>
@@ -116,32 +150,85 @@
       </form>
 
 
-      <form id='form-join' class='width50'>
+      <form id='form-joinA' class='width50'>
         <h3>Join arrays</h3>
         <h4>arrayA.concat(arrayB)</h4>
         <div class='form-row'>
           <label for='arrayA'>arrayA</label>
-          <input type='text' placeholder='value1,value2,value3' id='arrayA'></input>
+          <input type='text' placeholder='value1,value2,value3...' id='arrayA'></input>
         </div>
 
         <div class='form-row'>
           <label for='arrayB'>arrayB</label>
-          <input type='text' placeholder='value4,value5,value6' id='arrayB'></input>
+          <input type='text' placeholder='value4,value5,value6...' id='arrayB'></input>
         </div>
 
         <div class='form-row'>
           <p>Resultant array:&nbsp</p>
-          <div id='joinResult'></div>
+          <div id='joinResultA'></div>
         </div>
 
         <div class='form-row'>
           <p>Array length:&nbsp</p>
-          <div id='joinLength'></div>
+          <div id='joinLengthA'></div>
         </div>
 
         <div class='form-row last'>
-            <button class='reset' type='reset' id='button-joinReset'>Reset</button>
-            <button class='submit' id='button-join'>Join Arrays</button>
+            <button class='reset' type='reset' id='button-joinAReset'>Reset</button>
+            <button class='submit' id='button-joinA'>Join Arrays</button>
+        </div>
+      </form>
+
+      <form id='form-joinB' class='width50'>
+        <h3>Join arrays</h3>
+        <h4>[...arrayA, ...arrayB]</h4>
+        <div class='form-row'>
+          <label for='arrayC'>arrayC</label>
+          <input type='text' placeholder='value1,value2,value3...' id='arrayC'></input>
+        </div>
+
+        <div class='form-row'>
+          <label for='arrayD'>arrayD</label>
+          <input type='text' placeholder='value4,value5,value6...' id='arrayD'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Resultant array:&nbsp</p>
+          <div id='joinResultB'></div>
+        </div>
+
+        <div class='form-row'>
+          <p>Array length:&nbsp</p>
+          <div id='joinLengthB'></div>
+        </div>
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-joinBReset'>Reset</button>
+            <button class='submit' id='button-joinB'>Join Arrays</button>
+        </div>
+      </form>
+
+      <form id='form-toString' class='width50'>
+        <h3>Convert array to string</h3>
+        <h4>string.join('separator')</h4>
+        <div class='form-row'>
+          <label for='array'>array</label>
+          <input type='text' placeholder='value1,value2,value3...' id='array'></input>
+        </div>
+
+        <div class='form-row'>
+          <label for='separator'>separator</label>
+          <input type='text' id='separator'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Resultant string:&nbsp</p>
+          <div id='toStringResult'></div>
+        </div>
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-toStringReset'>Reset</button>
+            <button class='submit' id='button-toString'>Convert to String</button>
         </div>
       </form>
 
