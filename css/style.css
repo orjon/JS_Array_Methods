@@ -17,7 +17,6 @@ h4 {
 
 
 body {
-
 	background-color: #eeccff;
   padding: var(--entity-margin);
 	/* height: 100vh; */
@@ -27,12 +26,7 @@ body {
 }
 
 
-header {
-  max-width: 1500px;
-  width: 100%;
-	border: var(--layout-border) solid yellow;
-  margin-bottom: var(--entity-margin);
-}
+
 
 footer {
 	border: var(--layout-border) solid yellow;
@@ -40,16 +34,37 @@ footer {
 
 }
 
+header {
+  max-width: 750px;
+  width: 100%;
+	border: var(--layout-border) solid yellow;
+  margin-bottom: var(--entity-margin);
+}
+
 main {
-    max-width: 1500px;
+    max-width: 750px;
     width: 100%;
-		flex: 1;
-		border: var(--layout-border) solid yellow;
+    flex: 1;
+    border: var(--layout-border) solid yellow;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-column-gap: var(--entity-margin);
     grid-row-gap: var(--entity-margin);
 }
+
+@media screen and (min-width: 1200px){
+  header {
+    max-width: 1400px;
+  }
+
+  main {
+      max-width: 1400px;
+      grid-template-columns: 1fr 1fr;
+
+  }
+}
+
+
 
 form {
   font-size: 12pt;
