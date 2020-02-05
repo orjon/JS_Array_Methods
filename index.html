@@ -13,7 +13,8 @@
     </header>
     <main>
       <form id='form-splitString' class='width50'>
-        <h3>Split string on 'x' into array: <i>string.split('x')</i></h3>
+        <h3>Split string on 'x' into array</h3>
+        <h4>string.split('x')</h4>
         <div class='form-row'>
           <label for='splitSource'>string</label>
           <input type='text' id='splitSource'></input>
@@ -42,8 +43,9 @@
 
 
       <form id='form-subString' class='width50'>
-        <h3>Get substring from string: <i>string.substr(index,length)</i></h3>
-        <h3>Length=0: <i>string.substr(index)</i></h3>
+        <h3>Get substring from string</h3>
+        <h4>string.substr(index,length)</h4>
+        <h4>string.substr(index)</h4>
         <div class='form-row'>
           <label for='subStringSource'>string</label>
           <input type='text' id='subStringSource'></input>
@@ -73,7 +75,8 @@
 
 
       <form id='form-cap' class='width50'>
-        <h3>Capitalize word: <i>string.charAt(0).toUpperCase() + string.substr(1)</i></h3>
+        <h3>Capitalize word</h3>
+        <h4>string.charAt(0).toUpperCase() + string.substr(1)</h4>
 
         <div class='form-row'>
           <label for='capSource'>string</label>
@@ -92,8 +95,10 @@
       </form>
 
 
+
       <form id='form-caps' class='width50'>
         <h3>Convert to title case</h3>
+        <h4>string.val().split(' ').map(item => item.charAt(0).toUpperCase() + item.substr(1)).join(' ')</h4>
         <div class='form-row'>
           <label for='capsSource'>string</label>
           <input type='text' id='capsSource'></input>
@@ -107,6 +112,36 @@
         <div class='form-row right'>
             <button class='reset' type='reset' id='button-capsReset'>Reset</button>
             <button class='submit' id='button-caps'>Title Case</button>
+        </div>
+      </form>
+
+
+      <form id='form-join' class='width50'>
+        <h3>Join arrays</h3>
+        <h4>arrayA.concat(arrayB)</h4>
+        <div class='form-row'>
+          <label for='arrayA'>arrayA</label>
+          <input type='text' placeholder='value1,value2,value3' id='arrayA'></input>
+        </div>
+
+        <div class='form-row'>
+          <label for='arrayB'>arrayB</label>
+          <input type='text' placeholder='value4,value5,value6' id='arrayB'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Resultant array:&nbsp</p>
+          <div id='joinResult'></div>
+        </div>
+
+        <div class='form-row'>
+          <p>Array length:&nbsp</p>
+          <div id='joinLength'></div>
+        </div>
+
+        <div class='form-row right'>
+            <button class='reset' type='reset' id='button-joinReset'>Reset</button>
+            <button class='submit' id='button-join'>Join Arrays</button>
         </div>
       </form>
 

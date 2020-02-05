@@ -9,6 +9,11 @@
 	font-family: sans-serif;
 }
 
+h4 {
+  color: grey;
+  font-weight: 400;
+}
+
 
 
 body {
@@ -37,6 +42,7 @@ main {
 		height: 100%;
 		display: flex;
 		flex-direction: column;
+    align-items: flex-start;
 }
 
 form {

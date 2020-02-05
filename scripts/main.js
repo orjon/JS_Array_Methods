@@ -4,12 +4,18 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log('It is working!')
     document.getElementById('button-splitString').addEventListener('click', stringSplit)
     document.getElementById('button-splitReset').addEventListener('click', stringSplitReset)
+
     document.getElementById('button-subString').addEventListener('click', subString)
     document.getElementById('button-subStringReset').addEventListener('click', subStringReset)
+
     document.getElementById('button-cap').addEventListener('click', cap)
     document.getElementById('button-capReset').addEventListener('click', capReset)
+
     document.getElementById('button-caps').addEventListener('click', caps)
     document.getElementById('button-capsReset').addEventListener('click', capsReset)
+
+    document.getElementById('button-join').addEventListener('click', join)
+    document.getElementById('button-joinReset').addEventListener('click', joinReset)
   }
 
 
@@ -67,11 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const caps = function(e) {
     e.preventDefault()
     e.stopPropagation()
-
-    var capsSource = $('#capsSource').val().split(' ')
-    const capitalize = item => item.charAt(0).toUpperCase() + item.substr(1)
-    const temp = capsSource.map(capitalize)
-    const capsResult = temp.join(' ')
+    const capsResult = $('#capsSource').val().split(' ').map(item => item.charAt(0).toUpperCase() + item.substr(1)).join(' ')
     $('#capsResult').text(capsResult)
   }
 
@@ -80,5 +82,37 @@ window.addEventListener('DOMContentLoaded', () => {
     $('#form-caps').trigger('reset')
     $('#capsResult').text('')
   }
+
+
+
+  // // 4. Join two arrays of strings using `Array.concat`.
+  // // 	- `['Mike', 'Emily'] ['Will', 'Ajay'] => ['Mike', 'Emily', 'Will', 'Ajay']`
+  // console.log('--------------')
+  // const value11 = ['Mike', 'Emily']
+  // const value12 = ['Will', 'Ajay']
+  // let value13 = value11.concat(value12)
+  // console.log(value13)
+
+  const join = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var stringA = $('#arrayA').val()
+    var arrayA = stringA.split(',')
+    var stringB = $('#arrayB').val()
+    var arrayB = stringB.split(',')
+    var joinResult = arrayA.concat(arrayB)
+    $('#joinResult').text(joinResult)
+    $('#joinLength').text(joinResult.length)
+  }
+
+  const joinReset = function(e) {
+    e.preventDefault()
+    $('#form-join').trigger('reset')
+    $('#joinResult').text('')
+  }
+
+
+
+
 
 })
