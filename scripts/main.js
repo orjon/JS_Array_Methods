@@ -37,22 +37,52 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('button-filterModulo').addEventListener('click', filterModulo)
     document.getElementById('button-filterModuloReset').addEventListener('click', filterModuloReset)
+
+    document.getElementById('button-arraySort').addEventListener('click', arraySort)
+    document.getElementById('button-arraySortReset').addEventListener('click', arraySortReset)
+
+    document.getElementById('button-arrayToString').addEventListener('click', arrayToString)
+    document.getElementById('button-arrayToStringReset').addEventListener('click', arrayToStringReset)
   }
 
+
+  const arraySort = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var arraySortArray = $('#arraySortArray').val().split(',')
+    var arraySortResult = arraySortArray.sort()
+    $('#arraySortResult').text('['+arraySortResult+']')
+  }
+
+  const arraySortReset = function(e) {
+    e.preventDefault()
+    $('#form-arraySort').trigger('reset')
+    $('#arraySortResult').text('')
+  }
+
+
+  const arrayToString = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var arrayToStringArray = $('#arrayToStringArray').val().split(',')
+    var arrayToStringResult = arrayToStringArray.map(item => item.toString())
+    $('#arrayToStringResult').text('['+arrayToStringResult.map(item => '\''+item+'\'')+']')
+  }
+
+  const arrayToStringReset = function(e) {
+    e.preventDefault()
+    $('#form-arrayToString').trigger('reset')
+    $('#arrayToStringResult').text('')
+  }
 
   const filterModulo = function(e) {
     e.preventDefault()
     e.stopPropagation()
     var filterModuloArrayStrings = $('#filterModuloArray').val().split(',')
-    console.log(filterModuloArrayStrings)
     var filterModuloArray = filterModuloArrayStrings.map(item => parseInt(item))
-    console.log(filterModuloArray)
     var filterModuloValueString = $('#filterModuloValue').val()
-    console.log(filterModuloValueString)
     var filterModuloValue = parseInt(filterModuloValueString)
-    console.log(filterModuloValue)
     var filterModuloResult = filterModuloArray.filter(item => !(item % filterModuloValue))
-    console.log(filterModuloResult)
     $('#filterModuloResult').text('['+filterModuloResult+']')
   }
 
@@ -61,18 +91,6 @@ window.addEventListener('DOMContentLoaded', () => {
     $('#form-filterModulo').trigger('reset')
     $('#indexOfResult').text('')
   }
-
-
-
-
-  // 10. Take an array of numbers and return only the ones that are divisible by 3. You will need `Array.filter` and the modulus `%` operator.
-  // 	- `[1,2,3,4,5,6,7,8,9,10] => [3,6,9]`
-  console.log('--------------')
-  const value25 = [1,2,3,4,5,6,7,8,9,10]
-  const modulo3 = item => !(item % 3)
-  const value26 = value25.filter(modulo3)
-  console.log(value26)
-
 
 
 

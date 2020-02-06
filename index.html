@@ -119,6 +119,71 @@
       </form>
 
 
+      <form id='form-arrayToString' class='width50'>
+        <h3>Convert array items to strings</h3>
+        <h4>array.arrayToString((accumulator, currentValue) => accumulator + currentValue)</h4>
+        <div class='form-row'>
+          <label for='arrayToStringArray'>array</label>
+          <input type='text' id='arrayToStringArray'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Result is:&nbsp</p>
+          <div id='arrayToStringResult'></div>
+        </div>
+
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-arrayToStringReset'>Reset</button>
+            <button class='submit' id='button-arrayToString'>Convert to strings</button>
+        </div>
+      </form>
+
+
+      <form id='form-arraySort' class='width50'>
+        <h3>Sort array alphabetically</h3>
+        <h4>array.sort()</h4>
+        <div class='form-row'>
+          <label for='arraySortArray'>array</label>
+          <input type='text' id='arraySortArray'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Result is:&nbsp</p>
+          <div id='arraySortResult'></div>
+        </div>
+
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-arraySortReset'>Reset</button>
+            <button class='submit' id='button-arraySort'>Sort</button>
+        </div>
+      </form>
+
+      <form id='form-toString' class='width50'>
+        <h3>Convert array to string</h3>
+        <h4>string.join('separator')</h4>
+        <div class='form-row'>
+          <label for='array'>array</label>
+          <input type='text' placeholder='value1,value2,value3...' id='array'></input>
+        </div>
+
+        <div class='form-row'>
+          <label for='separator'>separator</label>
+          <input type='text' id='separator'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Resultant string:&nbsp</p>
+          <div id='toStringResult'></div>
+        </div>
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-toStringReset'>Reset</button>
+            <button class='submit' id='button-toString'>Convert to String</button>
+        </div>
+      </form>
+
 
       <form id='form-arrayItemLengths' class='width50'>
         <h3>Create arrayB of arrayA item lengths.</h3>
@@ -137,70 +202,6 @@
         <div class='form-row last'>
             <button class='reset' type='reset' id='button-arrayItemLengthsReset'>Reset</button>
             <button class='submit' id='button-arrayItemLengths'>item lengths</button>
-        </div>
-      </form>
-
-
-
-
-      <form id='form-splitString' class='width50'>
-        <h3>Split string on 'x' into array</h3>
-        <h4>string.split('x')</h4>
-        <div class='form-row'>
-          <label for='splitSource'>string</label>
-          <input type='text' id='splitSource'></input>
-        </div>
-
-        <div class='form-row'>
-          <label for='splitX'>split('x')</label>
-          <input type='text' id='splitX'></input>
-        </div>
-
-        <div class='form-row'>
-          <p>Resultant array:&nbsp</p>
-          <div id='splitResult'></div>
-        </div>
-
-        <div class='form-row'>
-          <p>Array length:&nbsp</p>
-          <div id='splitLength'></div>
-        </div>
-
-        <div class='form-row last'>
-            <button class='reset' type='reset' id='button-splitReset'>Reset</button>
-            <button class='submit' id='button-splitString'>Split</button>
-        </div>
-      </form>
-
-
-      <form id='form-subString' class='width50'>
-        <h3>Get substring from string</h3>
-        <h4>string.substr(index,length)</h4>
-        <h4>string.substr(index)</h4>
-        <div class='form-row'>
-          <label for='subStringSource'>string</label>
-          <input type='text' id='subStringSource'></input>
-        </div>
-
-        <div class='form-row'>
-          <label for='subStringIndex'>index</label>
-          <input type='text' id='subStringIndex'></input>
-        </div>
-
-
-        <div class='form-row'>
-          <label for='subStringLength'>length</label>
-          <input type='text' id='subStringLength'></input>
-        </div>
-
-        <div class='form-row'>
-          <p>Resultant string:&nbsp</p>
-          <div id='subStringResult'></div>
-        </div>
-
-        <div class='form-row last'>
-            <button class='reset' type='reset' id='button-subStringReset'>Reset</button>
-            <button class='submit' id='button-subString'>Get Substring</button>
         </div>
       </form>
 
@@ -246,6 +247,34 @@
         </div>
       </form>
 
+      <form id='form-splitString' class='width50'>
+        <h3>Split string on 'x' into array</h3>
+        <h4>string.split('x')</h4>
+        <div class='form-row'>
+          <label for='splitSource'>string</label>
+          <input type='text' id='splitSource'></input>
+        </div>
+
+        <div class='form-row'>
+          <label for='splitX'>split('x')</label>
+          <input type='text' id='splitX'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Resultant array:&nbsp</p>
+          <div id='splitResult'></div>
+        </div>
+
+        <div class='form-row'>
+          <p>Array length:&nbsp</p>
+          <div id='splitLength'></div>
+        </div>
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-splitReset'>Reset</button>
+            <button class='submit' id='button-splitString'>Split</button>
+        </div>
+      </form>
 
       <form id='form-joinA' class='width50'>
         <h3>Join arrays</h3>
@@ -305,29 +334,38 @@
         </div>
       </form>
 
-      <form id='form-toString' class='width50'>
-        <h3>Convert array to string</h3>
-        <h4>string.join('separator')</h4>
+
+      <form id='form-subString' class='width50'>
+        <h3>Get substring from string</h3>
+        <h4>string.substr(index,length)</h4>
+        <h4>string.substr(index)</h4>
         <div class='form-row'>
-          <label for='array'>array</label>
-          <input type='text' placeholder='value1,value2,value3...' id='array'></input>
+          <label for='subStringSource'>string</label>
+          <input type='text' id='subStringSource'></input>
         </div>
 
         <div class='form-row'>
-          <label for='separator'>separator</label>
-          <input type='text' id='separator'></input>
+          <label for='subStringIndex'>index</label>
+          <input type='text' id='subStringIndex'></input>
+        </div>
+
+
+        <div class='form-row'>
+          <label for='subStringLength'>length</label>
+          <input type='text' id='subStringLength'></input>
         </div>
 
         <div class='form-row'>
           <p>Resultant string:&nbsp</p>
-          <div id='toStringResult'></div>
+          <div id='subStringResult'></div>
         </div>
 
         <div class='form-row last'>
-            <button class='reset' type='reset' id='button-toStringReset'>Reset</button>
-            <button class='submit' id='button-toString'>Convert to String</button>
+            <button class='reset' type='reset' id='button-subStringReset'>Reset</button>
+            <button class='submit' id='button-subString'>Get Substring</button>
         </div>
       </form>
+
 
     </main>
   </body>
