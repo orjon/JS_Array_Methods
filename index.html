@@ -44,6 +44,103 @@
 
 
 
+      <form id='form-filterModulo' class='width50'>
+        <h3>Filter array items divisible by 'x'</h3>
+        <h4>array.filter(item => !(item % x))</h4>
+        <div class='form-row'>
+          <label for='filterModuloArray'>array</label>
+          <input type='text' id='filterModuloArray'></input>
+        </div>
+
+        <div class='form-row'>
+          <label for='filterModuloValue'>modulo 'x'</label>
+          <input type='text' id='filterModuloValue'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Resultant array:&nbsp</p>
+          <div id='filterModuloResult'></div>
+        </div>
+
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-filterModuloReset'>Reset</button>
+            <button class='submit' id='button-filterModulo'>Filter</button>
+        </div>
+      </form>
+
+
+
+
+      <form id='form-indexOf' class='width50'>
+        <h3>Find index of first occurance of item in array</h3>
+        <h4>array.indexOf(item)</h4>
+        <div class='form-row'>
+          <label for='indexOfArray'>array</label>
+          <input type='text' id='indexOfArray'></input>
+        </div>
+
+        <div class='form-row'>
+          <label for='indexOfItem'>item</label>
+          <input type='text' id='indexOfItem'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Index is:&nbsp</p>
+          <div id='indexOfResult'></div>
+        </div>
+
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-indexOfReset'>Reset</button>
+            <button class='submit' id='button-indexOf'>Find Index Of</button>
+        </div>
+      </form>
+
+
+      <form id='form-reduce' class='width50'>
+        <h3>Sum (reduce) values in array</h3>
+        <h4>array.reduce((accumulator, currentValue) => accumulator + currentValue)</h4>
+        <div class='form-row'>
+          <label for='reduceArray'>array</label>
+          <input type='text' id='reduceArray'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>Result is:&nbsp</p>
+          <div id='reduceResult'></div>
+        </div>
+
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-reduceReset'>Reset</button>
+            <button class='submit' id='button-reduce'>Reduce</button>
+        </div>
+      </form>
+
+
+
+      <form id='form-arrayItemLengths' class='width50'>
+        <h3>Create arrayB of arrayA item lengths.</h3>
+        <h4>arrayA.map(item => item.length)</h4>
+        <div class='form-row'>
+          <label for='arrayItemLengthsArray'>arrayA</label>
+          <input type='text' id='arrayItemLengthsArray'></input>
+        </div>
+
+        <div class='form-row'>
+          <p>arrayB:&nbsp</p>
+          <div id='arrayItemLengthsResult'></div>
+        </div>
+
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-arrayItemLengthsReset'>Reset</button>
+            <button class='submit' id='button-arrayItemLengths'>item lengths</button>
+        </div>
+      </form>
+
+
 
 
       <form id='form-splitString' class='width50'>

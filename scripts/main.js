@@ -25,36 +25,133 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('button-slice').addEventListener('click', slice)
     document.getElementById('button-sliceReset').addEventListener('click', sliceReset)
+
+    document.getElementById('button-indexOf').addEventListener('click', indexOf)
+    document.getElementById('button-indexOfReset').addEventListener('click', indexOfReset)
+
+    document.getElementById('button-reduce').addEventListener('click', reduce)
+    document.getElementById('button-reduceReset').addEventListener('click', reduceReset)
+
+    document.getElementById('button-arrayItemLengths').addEventListener('click', arrayItemLengths)
+    document.getElementById('button-arrayItemLengthsReset').addEventListener('click', arrayItemLengthsReset)
+
+    document.getElementById('button-filterModulo').addEventListener('click', filterModulo)
+    document.getElementById('button-filterModuloReset').addEventListener('click', filterModuloReset)
+  }
+
+
+  const filterModulo = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var filterModuloArrayStrings = $('#filterModuloArray').val().split(',')
+    console.log(filterModuloArrayStrings)
+    var filterModuloArray = filterModuloArrayStrings.map(item => parseInt(item))
+    console.log(filterModuloArray)
+    var filterModuloValueString = $('#filterModuloValue').val()
+    console.log(filterModuloValueString)
+    var filterModuloValue = parseInt(filterModuloValueString)
+    console.log(filterModuloValue)
+    var filterModuloResult = filterModuloArray.filter(item => !(item % filterModuloValue))
+    console.log(filterModuloResult)
+    $('#filterModuloResult').text('['+filterModuloResult+']')
+  }
+
+  const filterModuloReset = function(e) {
+    e.preventDefault()
+    $('#form-filterModulo').trigger('reset')
+    $('#indexOfResult').text('')
   }
 
 
 
-    const slice = function(e) {
-      e.preventDefault()
-      e.stopPropagation()
-      var sliceString = $('#array').val()
-      var sliceArray = sliceString.split(',')
-      var indexA = $('#sliceIndexA').val()
-      var indexB = $('#sliceIndexB').val()
-      var sliceResult = sliceArray.slice(indexA,indexB)
-      $('#sliceResult').text('['+sliceResult+']')
-      $('#sliceLength').text(sliceResult.length)
+
+  // 10. Take an array of numbers and return only the ones that are divisible by 3. You will need `Array.filter` and the modulus `%` operator.
+  // 	- `[1,2,3,4,5,6,7,8,9,10] => [3,6,9]`
+  console.log('--------------')
+  const value25 = [1,2,3,4,5,6,7,8,9,10]
+  const modulo3 = item => !(item % 3)
+  const value26 = value25.filter(modulo3)
+  console.log(value26)
+
+
+
+
+  const arrayItemLengths = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var arrayItemLengthsArray = $('#arrayItemLengthsArray').val().split(',')
+    var arrayItemLengthsResult = arrayItemLengthsArray.map(item => item.length)
+    $('#arrayItemLengthsResult').text('['+arrayItemLengthsResult+']')
+  }
+
+  const arrayItemLengthsReset = function(e) {
+    e.preventDefault()
+    $('#form-arrayItemLengths').trigger('reset')
+    $('#arrayItemLengthsResult').text('')
+  }
+
+
+  const reduce = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var reduceArrayStrings = $('#reduceArray').val().split(',')
+    var reduceArray = reduceArrayStrings.map(item => parseInt(item))
+    const reducer = ((accumulator, currentValue) => accumulator + currentValue)
+    var reduceResult = reduceArray.reduce(reducer)
+    if (isNaN(reduceResult)) {
+      $('#reduceResult').text('NaN (Non-numbers is array)')
+    } else {
+      $('#reduceResult').text(reduceResult)
     }
 
-    const sliceReset = function(e) {
-      e.preventDefault()
-      $('#form-slice').trigger('reset')
-      $('#sliceResult').text('')
-      $('#sliceLength').text('')
+  }
+
+  const reduceReset = function(e) {
+    e.preventDefault()
+    $('#form-reduce').trigger('reset')
+    $('#reduceResult').text('')
+  }
+
+
+  const indexOf = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var indexOfArray = $('#indexOfArray').val().split(',')
+    var indexOfItem = $('#indexOfItem').val()
+    var indexOfResult = indexOfArray.indexOf(indexOfItem)
+    if (indexOfResult === -1) {
+      $('#indexOfResult').text('-1 (not found)')
+    } else {
+      $('#indexOfResult').text(indexOfResult)
     }
 
-    <!--
-          // 6. Make a new array of the 2nd and 3rd elements of an array using `Array.slice`
-          // 	- `['hippo', 'giraffe', 'lion', 'hyena'] => ['giraffe', 'lion']`
-          // const value16 = ['hippo', 'giraffe', 'lion', 'hyena']
-          // const value17 = value16.slice(1,3) //splice would remove these from the original
-          // console.log(value17)
-          // -->
+  }
+
+  const indexOfReset = function(e) {
+    e.preventDefault()
+    $('#form-indexOf').trigger('reset')
+    $('#indexOfResult').text('')
+  }
+
+
+  const slice = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var sliceString = $('#array').val()
+    var sliceArray = sliceString.split(',')
+    var indexA = $('#sliceIndexA').val()
+    var indexB = $('#sliceIndexB').val()
+    var sliceResult = sliceArray.slice(indexA,indexB)
+    $('#sliceResult').text('['+sliceResult+']')
+    $('#sliceLength').text(sliceResult.length)
+  }
+
+  const sliceReset = function(e) {
+    e.preventDefault()
+    $('#form-slice').trigger('reset')
+    $('#sliceResult').text('')
+    $('#sliceLength').text('')
+  }
 
 
   const stringSplit = function(e) {
