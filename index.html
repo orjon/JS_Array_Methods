@@ -228,6 +228,26 @@
 
 
 
+      <form id='form-numberSeparator' class='width50'>
+        <h3>Add number separators</h3>
+        <h4>number.replace(/\B(?=(\d{3})+(?!\d))/g, ',')</h4>
+        <div class='form-row'>
+          <label for='numberToSeparate'>number</label>
+          <input type='number' id='numberToSeparate'></input>
+        </div>
+        <div class='form-row'>
+          <p>Resultant string:&nbsp</p>
+          <div id='numberSeparatorResult'></div>
+        </div>
+
+        <div class='form-row last'>
+            <button class='reset' type='reset' id='button-numberSeparatorReset'>Reset</button>
+            <button class='submit' id='button-numberSeparator'>Add Separators</button>
+        </div>
+      </form>
+
+
+
       <form id='form-caps' class='width50'>
         <h3>Convert to title case</h3>
         <h4>string.val().split(' ').map(item => item.charAt(0).toUpperCase() + item.substr(1)).join(' ')</h4>

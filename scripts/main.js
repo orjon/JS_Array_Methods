@@ -43,7 +43,26 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('button-arrayToString').addEventListener('click', arrayToString)
     document.getElementById('button-arrayToStringReset').addEventListener('click', arrayToStringReset)
+
+    document.getElementById('button-numberSeparator').addEventListener('click', numberSeparator)
+    document.getElementById('button-numberSeparatorReset').addEventListener('click', numberSeparatorReset)
   }
+
+
+  const numberSeparator = function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    var numberToSeparate = $('#numberToSeparate').val()
+    var numberSeparatorResult = numberToSeparate.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    $('#numberSeparatorResult').text(numberSeparatorResult)
+  }
+
+  const numberSeparatorReset = function(e) {
+    e.preventDefault()
+    $('#form-numberSeparator').trigger('reset')
+    $('#numberSeparatorResult').text('')
+  }
+
 
 
   const arraySort = function(e) {
